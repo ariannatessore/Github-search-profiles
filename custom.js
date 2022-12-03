@@ -10,7 +10,7 @@ btnSearch.addEventListener("click", buscarUser);
 function buscarUser(e){
     e.preventDefault();
 
-    //console.log(inputUser.value);
+   
     if (inputUser.value === "") {
         mostrarError("Escriba un user de GitHub...");
         return;
@@ -29,8 +29,7 @@ async function callApiUser(user){
         }
         const dataUser = await data[0].json();
         const dataRepo = await data[1].json();
-        //console.log(dataUser);
-        //console.log(dataRepo);
+       
         mostrarData(dataUser);
         mostrarRepos(dataRepo);
     } catch (error) {
@@ -74,7 +73,7 @@ function mostrarRepos(repos){
             link.target = "_blank";
             reposContainer.appendChild(link);
         });
-    //console.log(ten);
+   
 }
 
 function mostrarError(mensaje){
